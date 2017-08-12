@@ -7,11 +7,14 @@ function displayTasks() {
         success: function (response) {
             console.log('ajax get successful', response);
             $('#outputDiv').empty();
+            var completedTasks = [];
+            
             for (var i = 0; i < response.length; i++) {
                 var task = response[i];
                 var $rowToAppend = $('<div class="taskDiv"></div>');
                 $rowToAppend.append('<p>' + task.task + '</p>');
                 $rowToAppend.append('<button class="deleteButton">X</button>');
+                $rowToAppend.data('id', task.id);
                 if (task.complete) {
                     $('<input>', {
                         type: "checkbox",
@@ -19,12 +22,16 @@ function displayTasks() {
                         "checked": "checked"
                     }).appendTo($rowToAppend);
                     $rowToAppend.addClass('completed');
+                    completedTasks.push($rowToAppend);
                 } else {
                     $rowToAppend.append('<input type="checkbox" class="taskCheckBox">');
+                    $('#outputDiv').append($rowToAppend);
                 }
-                $rowToAppend.data('id', task.id);
-                $('#outputDiv').append($rowToAppend);
             } // end for loop
+
+            for (var i = 0; i < completedTasks.length; i++) {
+                $('#outputDiv').append(completedTasks[i]);
+            }
         }
 
     });
