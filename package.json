@@ -1,0 +1,25 @@
+{
+  "name": "todo-weekend-3",
+  "version": "1.0.0",
+  "description": "A full-stack To-Do list app.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "pg": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abiessener/todo-weekend-3.git"
+  },
+  "author": "Adam Biessener",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abiessener/todo-weekend-3/issues"
+  },
+  "homepage": "https://github.com/abiessener/todo-weekend-3#readme"
+}
