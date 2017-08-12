@@ -12,6 +12,11 @@ function displayTasks() {
             for (var i = 0; i < response.length; i++) {
                 var task = response[i];
                 var $rowToAppend = $('<div class="taskDiv"></div>');
+                var taskRed = 255 - ((10 * i) % 255);
+                var taskGreen = parseInt((255 - ((10 * i) % 255))/6);
+                var taskBlue = parseInt((255 - ((10 * i) % 255))/4);
+                var taskColor = 'rgba(' + taskRed + ',' + taskGreen + ',' + taskBlue + ', 0.3)';
+                $rowToAppend.css('background-color', taskColor);
                 $rowToAppend.append('<p>' + task.task + '</p>');
                 $rowToAppend.append('<button class="deleteButton">X</button>');
                 $rowToAppend.data('id', task.id);
@@ -30,6 +35,11 @@ function displayTasks() {
             } // end for loop
 
             for (var i = 0; i < completedTasks.length; i++) {
+                var taskRed = parseInt((255 - ((10 * i) % 255))/3);
+                var taskGreen = 255 - ((10 * i) % 255);
+                var taskBlue = parseInt((255 - ((10 * i) % 255))/3);
+                var taskColor = 'rgba(' + taskRed + ',' + taskGreen + ',' + taskBlue + ',0.3)';
+                completedTasks[i].css('background-color', taskColor);
                 $('#outputDiv').append(completedTasks[i]);
             }
         }

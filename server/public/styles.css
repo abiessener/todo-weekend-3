@@ -1,12 +1,20 @@
 body {
     background-color: #DC8EF0;
     text-align: center;
+    background-image: url('./images/bubble.jpg');
+    background-size: cover;
 }
 
 h1 {
     text-align: center;
-    width: 90%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.15);
+}
+
+hr {
+    margin-top: 35px;
 }
 
 #headlineDiv {
@@ -29,9 +37,12 @@ h1 {
     border-radius: 10px;
     height: 1.5em;
     text-align: center;
+    box-shadow: 5px 5px 3px #888888;
 }
 
 #submitButton {
+    box-shadow: 3px 3px 1px #888888;
+    
 }
 
 #outputDiv {
@@ -43,15 +54,23 @@ h1 {
     width: 80%;
     min-width: 400;
     margin: 20px auto;
-    padding: 5px;
-    border: 3px solid black;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
     border-radius: 20px;
+
+    background-color: rgba(0,0,0,0.1);
 }
 
 .taskDiv {
     width: 200px; 
     text-align: left;
-    margin: 15px 4%;
+    padding: 10px 2%;
+    margin: 5px 2%;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 3px #888888;
 }
 
 .taskCheckBox {
