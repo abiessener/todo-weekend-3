@@ -21,7 +21,7 @@ function displayTasks() {
                     $rowToAppend.data('complete', true);
                 } else {
                     $rowToAppend.append('<input type="checkbox" class="taskCheckBox">');
-                    $rowToAppend.data('complete', false);                    
+                    $rowToAppend.data('complete', false);
                 }
                 $('#outputDiv').append($rowToAppend);
             } // end for loop
@@ -30,28 +30,36 @@ function displayTasks() {
     });
 }
 
+// grab the input from #userInput, POST it to the server, then get a fresh task list and display it
+function submitTask() {
+    console.log('submitButton clicked');
+
+    var userInputObj = {
+        task: $('#userInput').val(),
+        complete: false,
+    };
+
+    $.ajax({
+        method: 'POST',
+        url: '/task',
+        data: userInputObj,
+        success: function (response) {
+            $('#userInput').val('');
+            displayTasks();
+        }
+    });
+}
+
 $(document).ready(function () {
     console.log('jq');
 
     displayTasks();
 
-    $('#submitButton').on('click', function () {
-        console.log('submitButton clicked');
-
-        var userInputObj = {
-            task: $('#userInput').val(),
-            complete: false,
-        };
-
-        $.ajax({
-            method: 'POST',
-            url: '/task',
-            data: userInputObj,
-            success: function (response) {
-                $('#userInput').val('');
-                displayTasks();
-            }
-        });
+    $('#submitButton').on('click', submitTask);
+    $('#userInput').keypress(function (key) {
+        if (key.which === 13) {
+            submitTask();
+        }
     });
 
     $('#outputDiv').on('click', ':checkbox', function () {
