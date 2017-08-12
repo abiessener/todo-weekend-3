@@ -18,11 +18,10 @@ function displayTasks() {
                         class: "taskCheckBox",
                         "checked": "checked"
                     }).appendTo($rowToAppend);
-                    $rowToAppend.data('complete', true);
                 } else {
                     $rowToAppend.append('<input type="checkbox" class="taskCheckBox">');
-                    $rowToAppend.data('complete', false);
                 }
+                $rowToAppend.data('id', task.id);
                 $('#outputDiv').append($rowToAppend);
             } // end for loop
         }
@@ -64,12 +63,14 @@ $(document).ready(function () {
 
     $('#outputDiv').on('click', ':checkbox', function () {
         console.log('checkbox clicked');
-        if ($(this).prop('checked')) {
-            console.log('checkbox is checked');
-        } else {
-            console.log('checkbox is empty');
-
-        }
+        $.ajax({
+            method: 'PUT',
+            url: '/task/' + $(this).parent().data('id'),
+            data: {
+                complete: $(this).prop('checked')
+            },
+            success: displayTasks
+        })
     })
 
     $('#outputDiv').on('click', '.deleteButton', function () {

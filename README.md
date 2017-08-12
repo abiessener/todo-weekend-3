@@ -19,7 +19,7 @@ This application will display a task list, let the user edit, add, and delete it
 ~~* Create a basic server~~
 ~~* Create a /task router~~
 ~~* Create GET route (SELECT)~~
-* Create POST route (INSERT)
+~~* Create POST route (INSERT)~~
 * Create PUT route (UPDATE)
 * Create DELETE route (DELETE)
 
