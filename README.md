@@ -17,8 +17,8 @@ This application will display a task list, let the user edit, add, and delete it
 ~~* SQL columns: id - task - complete~~
 
 ~~* Create a basic server~~
-* Create a /task router
-* Create GET route (SELECT)
+~~* Create a /task router~~
+~~* Create GET route (SELECT)~~
 * Create POST route (INSERT)
 * Create PUT route (UPDATE)
 * Create DELETE route (DELETE)
@@ -26,7 +26,7 @@ This application will display a task list, let the user edit, add, and delete it
 [] Whenever a task is created the front end should refresh to show all tasks that need to be completed.
 
 [] Each task should have an option to 'Complete' or 'Delete'.
-* Add 'Complete' and 'Delete' buttons to the DOM when drawing output
+~~* Add 'Complete' and 'Delete' buttons to the DOM when drawing output~~
 ~~* Add click handlers for Complete and Delete buttons~~
 * Create AJAX functions for Complete and Delete buttons
 
