@@ -27,7 +27,7 @@ This application will display a task list, let the user edit, add, and delete it
 
 [] Each task should have an option to 'Complete' or 'Delete'.
 * Add 'Complete' and 'Delete' buttons to the DOM when drawing output
-* Add click handlers for Complete and Delete buttons
+~~* Add click handlers for Complete and Delete buttons~~
 * Create AJAX functions for Complete and Delete buttons
 
 [] When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete)

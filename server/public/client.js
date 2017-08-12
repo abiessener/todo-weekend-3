@@ -17,4 +17,8 @@ $(document).ready(function(){
             
         }
     })
+
+    $('#outputDiv').on('click', '.deleteButton', function(){
+        console.log('delete clicked');
+    })
 });

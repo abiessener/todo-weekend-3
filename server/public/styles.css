@@ -59,7 +59,17 @@ h1 {
     display: inline;
 }
 
+.deleteButton {
+    float: right;
+    background-color: #4D0404;
+    color: white;
+    height: 16px;
+    width: 16px;
+    font-size: 9px;
+    padding: 1px;
+    margin-left: 5px;
+}
+
 p {
-    width: 188px;
     display: inline;
 }
