@@ -77,10 +77,15 @@ $(document).ready(function () {
 
     $('#outputDiv').on('click', '.deleteButton', function () {
         console.log('delete clicked');
-        $.ajax({
-            method: 'DELETE',
-            url: '/task/' + $(this).parent().data('id'),
-            success: displayTasks
-        });
+        var taskText = $(this).siblings('p').text();
+        console.log(taskText);
+        
+        if (confirm('Are you sure you want to delete "' + taskText + '"?') == true) {
+            $.ajax({
+                method: 'DELETE',
+                url: '/task/' + $(this).parent().data('id'),
+                success: displayTasks
+            });
+        }
     })
 });
