@@ -10,6 +10,7 @@ router.get('/', function(req,res){
             res.send(500);
         } else {
             client.query('SELECT * FROM tasks ORDER BY id', function(errorMakingQuery, result){
+                done();
                 if (errorMakingQuery){
                     console.log('error making query', errorMakingQuery);
                     res.send(500);
