@@ -6,8 +6,8 @@ This application will display a task list, let the user edit, add, and delete it
 
 ## TODO
 [] Create a front end experience that allows a user to create a task.
-* Create headline, input, and output container divs
-* Create input fields and buttons in input div
+~~* Create headline, input, and output container divs~~
+~~* Create input fields and buttons in input div~~
 * Create click handlers for input buttons
 * Create AJAX functions for click handlers
 * Add basic styling
@@ -16,7 +16,7 @@ This application will display a task list, let the user edit, add, and delete it
 * Create .sql file with initial population of tasks table
 * SQL columns: id - task - complete
 
-* Create a basic server
+~~* Create a basic server~~
 * Create a /task router
 * Create GET route (SELECT)
 * Create POST route (INSERT)
