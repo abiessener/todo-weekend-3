@@ -48,6 +48,7 @@ $(document).ready(function () {
             url: '/task',
             data: userInputObj,
             success: function (response) {
+                $('#userInput').val('');
                 displayTasks();
             }
         });
