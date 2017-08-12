@@ -1,0 +1,65 @@
+body {
+    background-color: #D8F272;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#headlineDiv {
+    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#inputDiv {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    padding: 15px;
+}
+
+#userInput {
+    width: 80%;
+    border-radius: 10px;
+    height: 1.5em;
+    text-align: center;
+}
+
+#submitButton {
+}
+
+#outputDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+
+    width: 80%;
+    min-width: 400;
+    margin: 20px auto;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.taskDiv {
+    width: 200px; 
+    text-align: left;
+    margin: 15px 4%;
+}
+
+.taskCheckBox {
+    float: right;
+    display: inline;
+}
+
+p {
+    width: 188px;
+    display: inline;
+}
