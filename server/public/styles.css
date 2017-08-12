@@ -73,3 +73,7 @@ h1 {
 p {
     display: inline;
 }
+
+.completed {
+    text-decoration: line-through;
+}

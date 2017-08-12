@@ -18,6 +18,7 @@ function displayTasks() {
                         class: "taskCheckBox",
                         "checked": "checked"
                     }).appendTo($rowToAppend);
+                    $rowToAppend.addClass('completed');
                 } else {
                     $rowToAppend.append('<input type="checkbox" class="taskCheckBox">');
                 }
@@ -70,7 +71,8 @@ $(document).ready(function () {
                 complete: $(this).prop('checked')
             },
             success: displayTasks
-        })
+        });
+
     })
 
     $('#outputDiv').on('click', '.deleteButton', function () {
