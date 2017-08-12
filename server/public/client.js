@@ -12,14 +12,16 @@ function displayTasks() {
                 var $rowToAppend = $('<div class="taskDiv"></div>');
                 $rowToAppend.append('<p>' + task.task + '</p>');
                 $rowToAppend.append('<button class="deleteButton">X</button>');
-                if (task.done) {
+                if (task.complete) {
                     $('<input>', {
                         type: "checkbox",
                         class: "taskCheckBox",
                         "checked": "checked"
                     }).appendTo($rowToAppend);
+                    $rowToAppend.data('complete', true);
                 } else {
                     $rowToAppend.append('<input type="checkbox" class="taskCheckBox">');
+                    $rowToAppend.data('complete', false);                    
                 }
                 $('#outputDiv').append($rowToAppend);
             } // end for loop
