@@ -73,9 +73,14 @@ $(document).ready(function () {
             success: displayTasks
         });
 
-    })
+    });
 
     $('#outputDiv').on('click', '.deleteButton', function () {
         console.log('delete clicked');
+        $.ajax({
+            method: 'DELETE',
+            url: '/task/' + $(this).parent().data('id'),
+            success: displayTasks
+        });
     })
 });
