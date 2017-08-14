@@ -9,9 +9,11 @@ function displayTasks() {
             $('#outputDiv').empty();
             var completedTasks = [];
             
+            // build a jQuery object out of the data from the DB, then append it to #outputDiv
             for (var i = 0; i < response.length; i++) {
                 var task = response[i];
                 var $rowToAppend = $('<div class="taskDiv"></div>');
+                //here we're making tasks' backgrounds red, and more red as we go through the array
                 var taskRed = 255 - ((10 * i) % 255);
                 var taskGreen = parseInt((255 - ((10 * i) % 255))/6);
                 var taskBlue = parseInt((255 - ((10 * i) % 255))/4);
@@ -20,6 +22,8 @@ function displayTasks() {
                 $rowToAppend.append('<p>' + task.task + '</p>');
                 $rowToAppend.append('<button class="deleteButton">X</button>');
                 $rowToAppend.data('id', task.id);
+
+                // here we differentiate between tasks that are complete or not. incomplete get appended to the DOM immediately, while complete tasks get stored in an array to append below
                 if (task.complete) {
                     $('<input>', {
                         type: "checkbox",
@@ -34,6 +38,7 @@ function displayTasks() {
                 }
             } // end for loop
 
+            // here we're making our completed tasks have green (and greener as we go) backgrounds, then appending them to the DOM
             for (var i = 0; i < completedTasks.length; i++) {
                 var taskRed = parseInt((255 - ((10 * i) % 255))/3);
                 var taskGreen = 255 - ((10 * i) % 255);
@@ -70,8 +75,9 @@ function submitTask() {
 $(document).ready(function () {
     console.log('jq');
 
-    displayTasks();
+    displayTasks(); // initial display
 
+    // run submitTask when submit button clicked or when [enter] pressed in the input field
     $('#submitButton').on('click', submitTask);
     $('#userInput').keypress(function (key) {
         if (key.which === 13) {
@@ -79,6 +85,8 @@ $(document).ready(function () {
         }
     });
 
+    // make our PUT request when the checkbox is clicked, passing the id of the clicked row as a URL parameter and whether it was checked or un-checked as the data object
+    // I mostly did this to get practice with a URL parameter, but it's nice that there's some portability of the code to the DELETE request, so that was a happy accident
     $('#outputDiv').on('click', ':checkbox', function () {
         console.log('checkbox clicked');
         $.ajax({
@@ -92,6 +100,7 @@ $(document).ready(function () {
 
     });
 
+    // prompt the user for confirmation when the delete button is clicked, then send our DELETE request if the user confirms (with the id of the row passed as a URL parameter)
     $('#outputDiv').on('click', '.deleteButton', function () {
         console.log('delete clicked');
         var taskText = $(this).siblings('p').text();

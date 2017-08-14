@@ -1,3 +1,5 @@
+// This is our pool config for our database connection. Localhost for this assignment and a postgres db
+
 var pg = require('pg');
 
 var config = {

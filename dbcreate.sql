@@ -1,3 +1,5 @@
+-- This is a pair of postgres SQL queries to set up the initial table to test the Full Stack To Do webapp
+
 CREATE TABLE tasks (
 id SERIAL PRIMARY KEY,
 task VARCHAR(140),

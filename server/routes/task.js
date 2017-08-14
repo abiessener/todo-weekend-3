@@ -1,7 +1,12 @@
+// this is our task router, which pretty much does all the heavy lifting on the server. This handles GET, POST, PUT, and DELETE requests sent to the /task URL
+
 var express = require('express');
 var router = express.Router();
 var pool = require('../modules/pool.js');
 
+// this is our simple GET route. Responds with an array of objects representing the rows the DB served up from our SELECT query
+// success response 200 + array of objects
+// error response 500
 router.get('/', function(req,res){
     console.log('tasks get hit');
     pool.connect(function (errorConnectingToDB, client, done){
@@ -23,6 +28,9 @@ router.get('/', function(req,res){
     
 });
 
+// this is our POST route, which INSERTs the data from req.body as a new row in our DB
+// success response 201 
+// error response 500
 router.post('/', function(req,res){
     console.log('tasks post hit');
     pool.connect(function (errorConnectingToDB, client, done){
@@ -44,6 +52,9 @@ router.post('/', function(req,res){
     
 });
 
+// our PUT route marks tasks as completed or un-completed. It takes the message id as a URL parameter and the complete state as a data object, and sends our UPDATE query to the DB
+// success response 200 
+// error response 500
 router.put('/:id', function(req,res){
     console.log('tasks put hit');
     pool.connect(function (errorConnectingToDB, client, done){
@@ -65,6 +76,9 @@ router.put('/:id', function(req,res){
     
 });
 
+// this simple DELETE route takes the id of the row as a URL parameter and uses that to construct our DELETE query for the DB
+// success response 200 
+// error response 500
 router.delete('/:id', function(req,res){
     console.log('tasks delete hit');
     pool.connect(function (errorConnectingToDB, client, done){

@@ -1,3 +1,5 @@
+// this file is our core server. Very simple, just serves public files and pulls in our /task router
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var task = require('./routes/task')

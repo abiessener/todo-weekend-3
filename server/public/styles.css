@@ -1,3 +1,5 @@
+/* All of our styling is done in this CSS file. Nothing super fancy, just static headlineDiv and inputDiv and a flexbox outputDiv that gets filled up with taskDivs by the script in client.js */
+
 body {
     background-color: #DC8EF0;
     text-align: center;
