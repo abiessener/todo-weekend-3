@@ -1,3 +1,14 @@
+# MEAN Stack To-do List
+This is the first real full-stack app that I built, and I'm pretty happy with how it turned out. The backend was simple enough to construct, but I spent some time on the styling and I like how it came together.
+
+## What I learned
+Getting the checkboxes to behave the way I wanted and tying them to display state (order, background color) was interesting and new. 
+
+Obviously getting a full-stack app running was a cool moment as well. That's what I came to Prime to learn to do, and it felt great.
+
+## Applicability
+I doubt I'd re-use any of this code anywhere. Honestly Angular is so much easier to use for the common front-end stuff once you learn it, jQuery just doesn't make a ton of sense. I'm glad I learned it, though, as JQ may well come in handy at some point (and educationally, tying the DOM to the script in this way was obviously huge).
+
 # Full Stack TODO
 
 ## Prime Weekend Challenge 3
